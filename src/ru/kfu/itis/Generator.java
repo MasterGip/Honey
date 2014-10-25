@@ -28,7 +28,7 @@ public class Generator{
         double r = R * Math.sqrt(3)/2;
         Hexagon hex = new Hexagon(0.5 * R, r, R);
         ArrayList<Point> points = new ArrayList<Point>();
-
+        boolean b = false;
 
         do {
 
@@ -52,6 +52,7 @@ public class Generator{
 
             }
             if(hex.center_x - R  < x_l) {
+                b = true;
                 while ((hex.center_y + r)> 0) {
 
                     points.add(new Point(hex.center_x, hex.center_y));
@@ -70,6 +71,11 @@ public class Generator{
 //        System.out.println(xm + " " + x_l);
         x_move = ((xm - (double)x_l) - 0.5 * R)/2;
 //        System.out.println(x_move);
+//        int yh;
+//        if(ym)
+        if((y_l - (ym - r) < 0) && b){
+            ym = ym - r;
+        }
         y_move = ((ym - (double)y_l))/2;
         Point[] p = new Point[points.size()];
         for(int i = 0; i < points.size(); i++){

@@ -72,6 +72,7 @@ public class ResultPanel extends JFrame{
            } else {
                unit = round(this.getSize().getHeight() / (y_l + 4 * radius));
            }
+//           System.out.println("!" + unit + " " + (int)(generator.x_move * unit) + " " + (int)(generator.y_move * unit));
            int[] x = {2 * radius * unit  + (int)(generator.x_move * unit),
                    2 * radius * unit + x_l * unit  + (int)(generator.x_move * unit),
                    2 * radius * unit + x_l * unit + (int)(generator.x_move*unit),
@@ -95,6 +96,7 @@ public class ResultPanel extends JFrame{
             for(Point point : generator.pnts){
 
                 drawHexagon(g, new Hexagon(point.x * unit + 2 * radius * unit, point.y * unit + 2 * radius * unit, radius * unit));
+                System.out.println("( " + point.x + ", " + point.y + " )");
             }
            g.setColor(Color.BLACK);
 
